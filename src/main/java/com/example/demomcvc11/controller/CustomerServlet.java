@@ -1,9 +1,10 @@
 package com.example.demomcvc11.controller;
 
 import com.example.demomcvc11.model.Customer;
-import com.example.demomcvc11.service.CustomerService;
-import com.example.demomcvc11.service.CustomerServiceImpl;
-import com.example.demomcvc11.service.CustomerServiceMySql;
+import com.example.demomcvc11.service.IGenericService;
+import com.example.demomcvc11.service.customer.CustomerService;
+import com.example.demomcvc11.service.customer.CustomerServiceMySql;
+import com.example.demomcvc11.service.province.ProvinceService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,7 +14,8 @@ import java.util.List;
 
 @WebServlet(name = "CustomerServlet", value = "/customers")
 public class CustomerServlet extends HttpServlet {
-    private CustomerService customerService = new CustomerServiceMySql();
+    private IGenericService customerService = new CustomerServiceMySql();
+    private IGenericService provinceService = new ProvinceService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

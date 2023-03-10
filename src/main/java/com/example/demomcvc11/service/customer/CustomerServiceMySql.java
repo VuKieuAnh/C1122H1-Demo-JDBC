@@ -1,13 +1,17 @@
-package com.example.demomcvc11.service;
+package com.example.demomcvc11.service.customer;
 
 import com.example.demomcvc11.connection.ConnectionCMS;
 import com.example.demomcvc11.model.Customer;
+import com.example.demomcvc11.model.Province;
+import com.example.demomcvc11.service.province.IProvinceService;
+import com.example.demomcvc11.service.province.ProvinceService;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerServiceMySql implements CustomerService {
+//    IProvinceService provinceService = new ProvinceService();
 
 
     @Override
